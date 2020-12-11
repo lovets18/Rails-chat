@@ -1,0 +1,15 @@
+<p id='alert'><%= alert %></p>
+<h1>Login</h1>
+<%= form_tag sessions_path, class: 'form d-flex flex-column justify-content-between' do |form| %>
+  <div class='form-group'>
+    <%= label_tag :username %>
+    <%= text_field_tag :username, '', class: 'form-control w-100' %>
+  </div>
+  <div class='form-group'>
+    <%= label_tag :password %>
+    <%= password_field_tag :password, '', class: 'form-control w-100' %>
+  </div>
+  <%= submit_tag 'Login', class: 'btn btn-primary'%>
+  <p><%= link_to 'Sign Up', signup_url%></p>
+<% end %>
+<p><%= link_to 'Main Page', root_url%></p>

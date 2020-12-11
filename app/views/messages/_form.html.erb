@@ -1,0 +1,21 @@
+<%= form_for(message, remote: true, class: 'form-inline') do |form| %>
+  <% if message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+        <% message.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input-group">
+    <%= form.text_field :content, placeholder:'Type smth...' ,class: 'form-control message-txt', required:'true' %>
+    <%= form.submit  'Send message',id: 'send-btn',class: 'btn btn-primary'%>
+  </div>
+
+
+
+<% end %>
